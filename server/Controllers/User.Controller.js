@@ -50,7 +50,7 @@ export default class UserController{
                 username,
                 password: hashed,
                 email,
-                avatarUrl: "default.jpg",
+                avatarUrl: `https://avatars.dicebar.com/api/adventurer-neutral/${generateRandom(40)}.svg`,
                 salt
             });
 
@@ -162,6 +162,42 @@ export default class UserController{
 
             return response.status(200).json({message: "Sucessfully updated profile"});
         } catch(error) {
+            console.error(error);
+            return response.status(500).json({message: "An unexpected error occurred"});
+        }
+    }
+
+    getUserPosts = async function (request,response) {
+        try{
+            const id=request.params.id;
+
+            const user = await User.findById(id);
+            const posts = user.posts;
+
+            return response.status(200).json(posts);
+        }
+        catch(error){
+            console.log(error);
+            return response.status(500).json({message: 'An unexpexted error occurred'});
+        }
+    }
+
+    getAvatar = async function (request,response) {
+        try {
+            const { id } = request.params;
+
+            if (!id) {
+                return response.status(400).json({message: "Must provide user id"});
+            }
+
+            const user = await User.findById(id);
+
+            if (!user) {
+                return response.status(404).json({message:"User not found"});
+            }
+
+            response.sendFile(path.join(__dirname, "..", "avatars", user.avatarUrl));
+        } catch (error) {
             console.error(error);
             return response.status(500).json({message: "An unexpected error occurred"});
         }

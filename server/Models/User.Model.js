@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
     avatarUrl: String,
     salt: String,
     posts: [{
-        type: mongoose.Schema.Types.ObjectId;
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Post"
     }]
 });
