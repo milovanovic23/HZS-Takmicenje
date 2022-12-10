@@ -1,8 +1,11 @@
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+        &copy; 2022 - ihearyou
+    </footer>
   );
 }
 

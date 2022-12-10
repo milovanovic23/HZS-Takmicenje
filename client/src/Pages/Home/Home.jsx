@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LIContext } from '../../context/LoggedInContext';
 
 const Home = () => {
-  return (
+    const { loggedIn, setLoggedIn } = useContext(LIContext);
+
+    console.log(loggedIn);
+
+    return (
     <div>Home</div>
   );
 }
