@@ -26,8 +26,8 @@ const Navbar = () => {
                     &nbsp;/
                 </li>
                 <li>
-                    <Link className='link' to="/game">
-                    { pathname === "/game" ? <div className="active">Test yourself</div> : "Test yourself"}
+                    <Link className='link' to="/test-yourself">
+                    { pathname === "/test-yourself" ? <div className="active">Test yourself</div> : "Test yourself"}
                     </Link>
                 </li>
                 <li>

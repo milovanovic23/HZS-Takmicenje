@@ -25,4 +25,5 @@ nav ul {
 
 nav .active {
     text-decoration: underline;
+    padding: 0 2vw;
 }

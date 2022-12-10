@@ -23,7 +23,7 @@ const Sidebar = () => {
             <Link className='link expand' to="/register" style={{ letterSpacing: "0.3rem" }}>Sign up</Link>
         ) }
         
-        <img className='expand' onClick={() => navigate("/game")} style={{ width: "100%", cursor: "pointer" }} src={testYourself} alt="Test yourself" />
+        <img className='expand' onClick={() => navigate("/test-yourself")} style={{ width: "100%", cursor: "pointer" }} src={testYourself} alt="Test yourself" />
         <img src={logo} alt="IHEARYOU" />
 
         {/* <button onClick={() => setLoggedIn(true)}>login</button>
