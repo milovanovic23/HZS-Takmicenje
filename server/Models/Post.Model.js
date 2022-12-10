@@ -4,16 +4,16 @@ const postSchema = mongoose.Schema({
     title: String,
     content: String,
     createdAt: String,
-    tags: String,
+    tags: [String],
+    allowsReplies: Boolean,
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-
-    childPost: {
+    comments: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Post"
-    }
+        ref: "Comment"
+    }]
 });
 
 export const Post = mongoose.model('Post',postSchema);

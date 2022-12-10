@@ -1,5 +1,5 @@
-import { Post } from "../Models/Post.Model"
-import { User } from "../Models/User.Model";
+import { Post } from "../Models/Post.Model.js"
+import { User } from "../Models/User.Model.js";
 
 export default class PostController{
     constructor(){}
@@ -25,6 +25,7 @@ export default class PostController{
             content: body.content,
             createdAt: body.createdAt,
             tags: body.tags,
+            comments,
             user: mongoUser
         });
 
@@ -65,7 +66,7 @@ export default class PostController{
     getPost = async function (request,response){
         try{
             const id = request.params.id;
-            const post = await Post.findById(id).populate('user','avatarUrl');
+            const post = await Post.findById(id).populate('user','avatarUrl').populate('comments');
 
             return response.status(200).json(post);
         }
