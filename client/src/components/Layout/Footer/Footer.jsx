@@ -4,7 +4,11 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer>
-        &copy; 2022 - ihearyou
+      <hr />
+      <p>
+      &copy; 2022 - ihearyou
+      </p>
+        
     </footer>
   );
 }
