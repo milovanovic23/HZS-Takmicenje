@@ -2,15 +2,21 @@ import React from 'react';
 import Navbar from './Navbar/Navbar.jsx';
 import Foooter from './Footer/Footer.jsx';
 import './Layout.css';
+import Sidebar from './Sidebar/Sidebar.jsx';
 
 const Layout = ({ children }) => {
     return (
         <>
-            <Navbar/>
             <main>
-                { children }
+                <Navbar/>
+                <section className='content'>
+                    { children }
+                </section>
+                <Foooter/>
             </main>
-            <Foooter/>
+            <section className='sidebar'>
+                <Sidebar />
+            </section>
         </>
     );
 }

@@ -1,0 +1,47 @@
+.sidebar {
+    width: 20vw;
+    background-color: var(--secondary);
+    min-height: 100vh;
+    color: var(--primary);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar * {
+    margin: 2vh 0;
+}
+
+.sidebar .link {
+    color: var(--primary);
+    width: 100%;
+}
+
+.sidebar .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 180px;
+}
+
+.sidebar .profile img {
+    width: 3rem;
+}
+
+.sidebar .profile p {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.sidebar .profile * {
+    margin: 0;
+}
+
+.sidebar img {
+    width: 55%;
+}

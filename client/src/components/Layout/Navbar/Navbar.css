@@ -1,15 +1,19 @@
 nav {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between;
+    align-items: space-between; */
 }
 
 nav ul {
     display: flex;
     list-style-type: none;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-nav ul .link {
+.link {
     color: var(--secondary);
     text-decoration: none;
     padding: 1rem;
