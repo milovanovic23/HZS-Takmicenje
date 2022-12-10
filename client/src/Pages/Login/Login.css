@@ -1,0 +1,16 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.auth-wrapper {
+    width: 50vw;
+    height: 80vh;
+    background-color: var(--primary);
+    border-radius: 2rem;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
