@@ -1,9 +1,10 @@
 import React from 'react'
+import './Post.css'
 
 
 const Post = (props) => {
   return (
-    <div>
+    <div className='containerPost'>
         <div className="headPost">
         <h3>{props.title}</h3>
         <img src='' alt='Profilna'/>
