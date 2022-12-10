@@ -6,8 +6,13 @@ const postSchema = mongoose.Schema({
     createdAt: String,
     tags: String,
     user: {
-        type: mongoose.Schema.Types.ObjectId;
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User"
+    },
+
+    childPost: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post"
     }
 });
 
