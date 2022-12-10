@@ -3,6 +3,7 @@ dotenv.config();
 
 import crypto from "crypto";
 import { User } from "../Models/User.Model.js";
+import { genJWT } from "../utils/jwt.js";
 
 function generateRandom(length){
     let result             = '';
@@ -54,16 +55,15 @@ export default class UserController{
                 salt
             });
 
-            //TO DO: implementiraj ovo sta god vec
-            /*response.cookie("logged_in", true);
+            response.cookie("logged_in", true);
             response.cookie("token", genJWT(user.id), {
                 httpOnly: true,
                 secure: true,
-            });*/
+            });
         }
         catch(error){
             console.log(error);
-            return response.status(500).json({message: 'An unexpected message occurred'});
+            return response.status(500).json({message: 'An unexpected error occurred'});
         }
     }
 
@@ -104,7 +104,6 @@ export default class UserController{
                 return response.status(400).json({message:"Wrong password"});
             }
 
-            // TODO: implement JWT token generation function
             response.cookie("logged_in", true);
             response.cookie("token", genJWT(user.id), {
                 httpOnly: true,
@@ -182,24 +181,4 @@ export default class UserController{
         }
     }
 
-    getAvatar = async function (request,response) {
-        try {
-            const { id } = request.params;
-
-            if (!id) {
-                return response.status(400).json({message: "Must provide user id"});
-            }
-
-            const user = await User.findById(id);
-
-            if (!user) {
-                return response.status(404).json({message:"User not found"});
-            }
-
-            response.sendFile(path.join(__dirname, "..", "avatars", user.avatarUrl));
-        } catch (error) {
-            console.error(error);
-            return response.status(500).json({message: "An unexpected error occurred"});
-        }
-    }
 }
