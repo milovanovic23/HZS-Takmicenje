@@ -22,3 +22,7 @@ nav ul {
     transition: 200ms ease;
     font-weight: bold;
 }
+
+nav .active {
+    text-decoration: underline;
+}
