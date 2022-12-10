@@ -1,8 +1,6 @@
 nav {
     width: 100%;
     display: flex;
-    /* justify-content: space-between;
-    align-items: space-between; */
 }
 
 nav ul {
@@ -18,4 +16,5 @@ nav ul {
     text-decoration: none;
     padding: 1rem;
     text-transform: uppercase;
+    transition: 200ms ease;
 }
