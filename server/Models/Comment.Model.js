@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const commentSchema = mongoose.Schema({
     content: String,
-    createdAt: String,
+    createdAt: Number,
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"

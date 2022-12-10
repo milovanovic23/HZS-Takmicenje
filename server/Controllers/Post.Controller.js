@@ -1,5 +1,6 @@
 import { Post } from "../Models/Post.Model.js"
 import { User } from "../Models/User.Model.js";
+import { decodeJWT } from "../utils/jwt.js";
 
 export default class PostController{
     constructor(){}
@@ -11,8 +12,7 @@ export default class PostController{
     }
 
     addPost = async function (request,response) {
-        const body = request.body;
-        const user = request.locals.user;
+        const {title, content, tags, allowsReplies, user} = request.body;
 
         const mongoUser = await User.findById(user.id);
 
@@ -21,11 +21,11 @@ export default class PostController{
         }
 
         const post = await Post.create({
-            title: body.title,
-            content: body.content,
-            createdAt: body.createdAt,
-            tags: body.tags,
-            comments,
+            title,
+            content,
+            createdAt: Date.now(),
+            tags,
+            allowsReplies,
             user: mongoUser
         });
 
@@ -37,16 +37,18 @@ export default class PostController{
 
     deletePost = async function (request, response) {
         try{
-            const id = request.params.id;
-            const user = response.locals.user;
+            const {postId} = request.params;
 
-            const post = await Post.findById(id).populate('user');
+            const uId = decodeJWT(request.cookies["token"]);
+
+
+            const post = await Post.findById(postId).populate('user');
 
             if(!post){
                 return response.status(404).json({message: 'Post not found'});
             }
 
-            if(post.user.id!=user.id){
+            if(post.user.id!==uId){
                 return response.status(403).json({messsage:'Cannot delete this post'});
             }
 
@@ -65,7 +67,7 @@ export default class PostController{
 
     getPost = async function (request,response){
         try{
-            const id = request.params.id;
+            const {id} = request.params;
             const post = await Post.findById(id).populate('user','avatarUrl').populate('comments');
 
             return response.status(200).json(post);
