@@ -1,9 +1,7 @@
 .sidebar {
     width: 20vw;
     background-color: var(--secondary);
-    min-height: 100vh;
     color: var(--primary);
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,11 +16,13 @@
     width: 100%;
     text-align: center;
     font-size: 2rem;
-    transition: 200ms ease;
 }
 
-.sidebar .link:hover {
-    transform: scale(1.2);
+.sidebar .expand {
+    transition: 200ms ease;
+}
+.sidebar .expand:hover {
+    transform: scale(1.1);
     transition: 200ms ease;
 }
 

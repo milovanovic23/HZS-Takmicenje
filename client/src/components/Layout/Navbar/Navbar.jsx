@@ -1,26 +1,46 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
-  return (
-    <nav>
-        <ul>
-            <li>
-                <Link className='link' to="/">About</Link>
-            </li>
-            <li>
-                <Link className='link' to="/stories">Stories</Link>
-            </li>
-            <li>
-                <Link className='link' to="/game">Test yourself</Link>
-            </li>
-            <li>
-                <Link className='link' to="/contact-us">Contact us</Link>
-            </li>
-        </ul>
-    </nav>
-  );
+    const location = useLocation();
+    const { pathname } = location;
+
+    return (
+        <nav>
+            <ul>
+                <li>
+                    <Link className='link' to="/">
+                        { pathname === "/" ? <div className="active">About</div> : "About"}
+                    </Link>
+                </li>
+                <li>
+                    &nbsp;/
+                </li>
+                <li>
+                    <Link className='link' to="/stories">
+                    { pathname === "/stories" ? <div className="active">Stories</div> : "Stories"}
+                    </Link>
+                </li>
+                <li>
+                    &nbsp;/
+                </li>
+                <li>
+                    <Link className='link' to="/game">
+                    { pathname === "/game" ? <div className="active">Test yourself</div> : "Test yourself"}
+                    </Link>
+                </li>
+                <li>
+                    &nbsp;/
+                </li>
+                <li>
+                    <Link className='link' to="/contact-us">
+                    { pathname === "/contact-us" ? <div className="active">Contact us</div> : "Contact us"}
+                    </Link>
+                </li>
+            </ul>
+        </nav>
+    );
 }
 
 export default Navbar;

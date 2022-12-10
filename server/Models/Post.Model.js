@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const postSchema = mongoose.Schema({
     title: String,
     content: String,
-    createdAt: String,
+    createdAt: Number,
     tags: [String],
     allowsReplies: Boolean,
     user: {

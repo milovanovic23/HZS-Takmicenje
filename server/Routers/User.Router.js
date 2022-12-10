@@ -15,3 +15,5 @@ router.get('myaccount/:id',authoriseUser,userController.getUserPosts);
 router.delete('/:id',authoriseUser,userController.removeUser);
 
 router.put('/:id',authoriseUser,userController.updateProfile);
+
+export const userRouter = router;

@@ -1,7 +1,22 @@
 footer {
-    background-color: var(--secondary);
+    /* background-color: var(--secondary); */
     color: var(--primary);
     text-align: center;
     font-size: 1.4rem;
     padding: 1rem;
+    text-transform: uppercase;
+}
+footer p{
+    padding-top: 1rem;
+    padding-bottom: 0.1rem;
+    color:black;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.4rem;
+}
+hr{
+    max-width: 70%;
+    margin: auto;
+    border: solid 0.1rem;
+    background-color: black;
 }

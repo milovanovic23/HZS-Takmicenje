@@ -1,20 +1,28 @@
 nav {
     width: 100%;
     display: flex;
+    justify-content: center;
 }
 
 nav ul {
     display: flex;
     list-style-type: none;
-    width: 100%;
+    /* width: 100%; */
     justify-content: space-evenly;
     align-items: center;
+    padding-top: 1rem;
 }
 
 .link {
+    letter-spacing: 0.5rem;
     color: var(--secondary);
     text-decoration: none;
     padding: 1rem;
     text-transform: uppercase;
     transition: 200ms ease;
+    font-weight: bold;
+}
+
+nav .active {
+    text-decoration: underline;
 }

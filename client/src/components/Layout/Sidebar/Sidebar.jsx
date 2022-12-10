@@ -15,19 +15,19 @@ const Sidebar = () => {
     return (
         <>
         { loggedIn ? (
-            <div onClick={() => navigate("/my-profile")} className="profile">
+            <div onClick={() => navigate("/my-profile")} className="profile expand">
                 <img src="https://avatars.dicebear.com/api/adventurer-neutral/USERID.svg" alt="Avatar" />
                 <p>username</p>
             </div>
         ) : (
-            <Link className='link' to="/register" style={{ letterSpacing: "0.3rem" }}>Sign up</Link>
+            <Link className='link expand' to="/register" style={{ letterSpacing: "0.3rem" }}>Sign up</Link>
         ) }
         
-        <img onClick={() => navigate("/game")} style={{ width: "100%", cursor: "pointer" }} src={testYourself} alt="Test yourself" />
+        <img className='expand' onClick={() => navigate("/game")} style={{ width: "100%", cursor: "pointer" }} src={testYourself} alt="Test yourself" />
         <img src={logo} alt="IHEARYOU" />
 
-        <button onClick={() => setLoggedIn(true)}>login</button>
-        <button onClick={() => setLoggedIn(false)}>logout</button>
+        {/* <button onClick={() => setLoggedIn(true)}>login</button>
+        <button onClick={() => setLoggedIn(false)}>logout</button> */}
         </>
     );
 }
