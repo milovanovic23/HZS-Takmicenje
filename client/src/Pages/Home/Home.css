@@ -21,9 +21,22 @@
 .sectionLandingText{
     margin: 0;
 }
+.extended{
+display: flex;
+margin-left: 2rem;
+flex-direction: column;
+}
+.extended img{
+    margin-top: 10vh;
+}
+
 .landing section {
     width: 100%;
     display: flex;
+
+}
+.landing section .sectionWithTest{
+    display: block;
 }
 
 .landing section * {

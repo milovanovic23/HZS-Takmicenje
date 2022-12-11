@@ -8,7 +8,7 @@ const Stories = () => {
       <h1 className='anonStories'>anonymous stories</h1>
       <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor'/>
       <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor'/>
-      <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor'/>
+      <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor dsad adsdasd dasdasd sdasdas dasdasd dasdasdas asdasdas dasdasd dasdasd dasdas dsadasd asdasda dasdas'/>
       <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor'/>
       </div>
       

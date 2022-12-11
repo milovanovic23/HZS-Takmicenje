@@ -27,7 +27,7 @@ const Sidebar = () => {
                 <p>Login</p>
             </div>
         ) }
-         { location.pathname === '/test-yourself'? <></> : <img className='expand' onClick={() => navigate("/test-yourself")} style={{ width: "100%", cursor: "pointer" }} src={testYourself} alt="Test yourself" />}
+        
         
         <img src={logo} alt="IHEARYOU" />
        
