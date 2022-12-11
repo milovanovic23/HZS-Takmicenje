@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import GameChoice from '../../components/GameChoice/GameChoice';
 import Text from '../../components/Text/Text';
 import './Game.css';
-
+import Typewriter from 'typewriter-effect/dist/core';
 import idle from "../../assets/Azaric-Idle.gif";
 import walking from "../../assets/Azaric-Walking.gif";
 import frozen from "../../assets/Azaric.png";
@@ -15,6 +15,7 @@ const Game = (props) => {
   const start = () => {
     audio.play();
   }
+  
   const [ state, setState ] = useState(frozen);
   const [ started, setStarted ] = useState(false);
 
