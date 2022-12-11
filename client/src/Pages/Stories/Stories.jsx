@@ -4,11 +4,14 @@ import './Stories.css'
 const Stories = () => {
   return (
     <div>
+      <div className="containerStories">
       <h1 className='anonStories'>anonymous stories</h1>
       <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor'/>
       <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor'/>
       <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor'/>
       <Post title='Lorem ipsum' bodyText='Lorem ipsum dolor'/>
+      </div>
+      
     
     
     

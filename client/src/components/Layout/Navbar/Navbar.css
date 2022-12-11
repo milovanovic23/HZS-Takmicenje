@@ -12,7 +12,12 @@ nav ul {
     align-items: center;
     padding-top: 1rem;
 }
+nav img{
+    width: 5vh;
+    align-self: left;
+    display: none;
 
+}
 .link {
     letter-spacing: 0.5rem;
     color: var(--secondary);
@@ -26,4 +31,18 @@ nav ul {
 nav .active {
     color: rgba(0, 0, 0, 0.6);
     padding: 0 2vw;
+}
+@media screen and (max-width: 1010px) {
+    nav ul{
+        display: none;
+    }
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+    }
+    nav img{
+        display: block;
+        margin: 1vh;
+    }
 }

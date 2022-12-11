@@ -1,5 +1,6 @@
 import React from 'react'
 import './Post.css'
+import profilePhoto from '../../assets/profilePhoto.png'
 
 
 const Post = (props) => {
@@ -7,7 +8,7 @@ const Post = (props) => {
     <div className='containerPost'>
         <div className="headPost">
         <h3>{props.title}</h3>
-        <img src='' alt='Profilna'/>
+        <img src={profilePhoto} alt='Profile photo'/>
         </div>
         <div className="bodyPost">
             <div className="bodyPostText">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
+import burger from '../../../assets/burger.png'
 
 const Navbar = () => {
     const location = useLocation();
@@ -8,6 +9,7 @@ const Navbar = () => {
 
     return (
         <nav>
+            <img src={burger}/>
             <ul>
                 <li>
                     <Link className='link' to="/">
