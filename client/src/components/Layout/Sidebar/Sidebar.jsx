@@ -8,7 +8,6 @@ import { useLocation } from 'react-router-dom';
 import unknown from '../../../assets/unknownProfile.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 
 
 import logo from "../../../assets/logo-updated.png";
