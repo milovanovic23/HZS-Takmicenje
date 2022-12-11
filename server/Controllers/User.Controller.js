@@ -3,7 +3,7 @@ dotenv.config();
 
 import crypto from "crypto";
 import { User } from "../Models/User.Model.js";
-import { genJWT } from "../utils/jwt.js";
+import { decodeJWT, genJWT } from "../utils/jwt.js";
 
 function generateRandom(length){
     let result             = '';
@@ -51,15 +51,17 @@ export default class UserController{
                 username,
                 password: hashed,
                 email,
-                avatarUrl: `https://avatars.dicebar.com/api/adventurer-neutral/${generateRandom(40)}.svg`,
+                avatarUrl: `https://avatars.dicebear.com/api/adventurer-neutral/${generateRandom(40)}.svg`,
                 salt
             });
 
-            response.cookie("logged_in", true);
-            response.cookie("token", genJWT(user.id), {
-                httpOnly: true,
-                secure: true,
-            });
+            // response.cookie("logged_in", true);
+            // response.cookie("token", genJWT(user.id), {
+            //     httpOnly: true,
+            //     secure: true,
+            // });
+
+            return response.status(200).json({message: "User created successfully", token: genJWT(user.id)});
         }
         catch(error){
             console.log(error);
@@ -77,6 +79,7 @@ export default class UserController{
             }
 
             await User.deleteOne(user);
+
             return response.status(200).json({message: "User deleted successfully"});
         } catch(error) {
             console.log(error);
@@ -104,12 +107,13 @@ export default class UserController{
                 return response.status(400).json({message:"Wrong password"});
             }
 
-            response.cookie("logged_in", true);
-            response.cookie("token", genJWT(user.id), {
-                httpOnly: true,
-                secure: true,
-            });
-            return response.status(200).json({message:"User sucessfully logged in"});
+            // response.cookie("logged_in", true);
+            // response.cookie("token", genJWT(user.id), {
+            //     httpOnly: true,
+            //     secure: true,
+            // });
+
+            return response.status(200).json({message:"User sucessfully logged in", token: genJWT(user.id)});
         } catch(error) {
             console.error(error);
             return response.status(500).json({message: "An unexpected error occurred"});
@@ -129,7 +133,7 @@ export default class UserController{
 
     updateProfile = async function (request,response) {
         try {
-            const {id} = request.params;
+            const id = decodeJWT(request.cookies["token"]);
 
             if (!id) {
                 return response.status(400).json({message: "Must provide user id"});
@@ -181,4 +185,19 @@ export default class UserController{
         }
     }
 
+    getUserData = async function (request,response) {
+        try{
+            const id= decodeJWT(request.params.id);
+
+            
+            const user = await User.findById(id, '-password -salt');
+            
+            // console.log(user);
+            return response.status(200).json(user);
+        }
+        catch(error){
+            console.log(error);
+            return response.status(500).json({message: 'An unexpexted error occurred'});
+        }
+    }
 }

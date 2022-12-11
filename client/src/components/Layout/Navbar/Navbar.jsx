@@ -44,7 +44,7 @@ const Navbar = () => {
                 </li>
                 <li>
                     <Link className='link' to="/create-post">
-                    { pathname === "/create-post" ? <div className="active"></div> : "be heard"}
+                    { pathname === "/create-post" ? <div className="active">be heard</div> : "be heard"}
                     </Link>
                 </li>
             </ul>

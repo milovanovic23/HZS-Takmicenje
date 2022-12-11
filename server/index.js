@@ -13,13 +13,13 @@ import { postRouter } from "./Routers/Post.Router.js";
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(cors({
     origin: 'http://localhost:3000',
-    
 }));
 
 app.use('/user', userRouter);
-app.use('/post',postRouter);
+app.use('/post', postRouter);
 
 mongoose.connect("mongodb://127.0.0.1:27017/ihearyou", () => console.log("Connected to DB!"));
 

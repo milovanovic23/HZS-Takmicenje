@@ -9,8 +9,8 @@ router.post('/register',userController.addUser);
 router.post('/login',userController.loginUser);
 
 router.get('/logout',authoriseUser,userController.logoutUser);
-router.get('/avatar/:id',userController.getAvatar);
-router.get('myaccount/:id',authoriseUser,userController.getUserPosts);
+router.get('/getPosts/:id',authoriseUser,userController.getUserPosts);
+router.get('/:id', userController.getUserData);
 
 router.delete('/:id',authoriseUser,userController.removeUser);
 

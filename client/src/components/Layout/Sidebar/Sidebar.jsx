@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LIContext } from '../../../context/LoggedInContext';
+import { AContext } from '../../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import { useLocation } from 'react-router-dom';
@@ -12,14 +13,23 @@ import logo from "../../../assets/logo-updated.png";
 const Sidebar = () => {
     const location=useLocation();
     const { loggedIn, setLoggedIn } = useContext(LIContext);
+    const { token, setToken } = useContext(AContext);
     const navigate = useNavigate();
+
+    const [ username, setUsername ] = useState("");
+    const [ avatar, setAvatar ] = useState("");
+
+    fetch(`http://localhost:4000/user/${token}`).then(r=>r.json()).then(data => {
+        setUsername(data.username);
+        setAvatar(data.avatarUrl);
+    });
 
     return (
         <>
         { loggedIn ? (
             <div onClick={() => navigate("/my-profile")} className="profile expand">
-                <img src="https://avatars.dicebear.com/api/adventurer-neutral/USERID.svg" alt="Avatar" />
-                <p>username</p>
+                <img src={avatar} alt="Avatar" />
+                <p>{username}</p>
             </div>
         ) : (
             <div onClick={() => navigate("/login")} className="profile expand">
