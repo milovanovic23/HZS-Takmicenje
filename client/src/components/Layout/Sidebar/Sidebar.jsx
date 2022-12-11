@@ -4,9 +4,9 @@ import { LIContext } from '../../../context/LoggedInContext';
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import { useLocation } from 'react-router-dom';
-import unknown from '../../../assets/unknownProfile.jpg';
+import unknown from '../../../assets/unknownProfile.png';
 
-import testYourself from "../../../assets/testyourself.png";
+
 import logo from "../../../assets/logo-updated.png";
 
 const Sidebar = () => {
