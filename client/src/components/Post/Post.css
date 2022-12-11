@@ -43,5 +43,6 @@
     justify-content: right;
 }
 .findOut:hover{
+    cursor: pointer;
     text-decoration: underline;
 }

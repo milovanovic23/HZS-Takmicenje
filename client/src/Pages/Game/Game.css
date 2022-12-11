@@ -9,13 +9,15 @@
     text-transform: uppercase;
     letter-spacing: 1rem;
     padding: 1rem;
-    border-radius:1rem;
-    background: transparent;
+    color: #e9e9e9;
+    border-radius:1rem ;
+    background: #222222;
     margin: 1rem;
     
 
 }
 .game {
+    border: solid 2px;
     margin: 6rem;
     width: 1280px;
     height: 720px;
