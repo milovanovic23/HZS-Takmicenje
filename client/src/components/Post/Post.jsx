@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Post.css'
-import profilePhoto from '../../assets/profilePhoto.png'
+// import profilePhoto from '../../assets/profilePhoto.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -22,7 +22,7 @@ const Post = (props) => {
           <h3>{props.title}</h3>
           </div>
           <div className="imagePost">
-            <img src={profilePhoto} alt='Profile photo'/>
+            <img src={props.profilePhoto} alt='Profile photo'/>
           </div>
         
         </div>

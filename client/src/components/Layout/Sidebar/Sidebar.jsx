@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LIContext } from '../../../context/LoggedInContext';
 import { AContext } from '../../../context/AuthContext';
@@ -8,7 +8,6 @@ import { useLocation } from 'react-router-dom';
 import unknown from '../../../assets/unknownProfile.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 
 
 import logo from "../../../assets/logo-updated.png";
@@ -24,10 +23,14 @@ const Sidebar = () => {
     const [ username, setUsername ] = useState("");
     const [ avatar, setAvatar ] = useState("");
 
-    fetch(`http://localhost:4000/user/${token}`).then(r=>r.json()).then(data => {
-        setUsername(data.username);
-        setAvatar(data.avatarUrl);
-    });
+    useEffect(() => {
+        fetch(`http://localhost:4000/user/${token}`)
+        .then(r=>r.json())
+        .then(data => {
+            setUsername(data.username);
+            setAvatar(data.avatarUrl);
+        });
+    }, []);
 
     return (
         <>
