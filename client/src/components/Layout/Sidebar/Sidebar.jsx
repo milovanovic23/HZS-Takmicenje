@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { LIContext } from '../../../context/LoggedInContext';
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
+import { useLocation } from 'react-router-dom';
+import unknown from '../../../assets/unknownProfile.jpg';
 
-import testYourself from "../../../assets/testyourself.svg";
+import testYourself from "../../../assets/testyourself.png";
 import logo from "../../../assets/logo-updated.png";
 
 const Sidebar = () => {
-
+    const location=useLocation();
     const { loggedIn, setLoggedIn } = useContext(LIContext);
     const navigate = useNavigate();
 
@@ -20,12 +22,15 @@ const Sidebar = () => {
                 <p>username</p>
             </div>
         ) : (
-            <Link className='link expand' to="/register" style={{ letterSpacing: "0.3rem" }}>Sign up</Link>
+            <div onClick={() => navigate("/login")} className="profile expand">
+                <img src={unknown} alt="Unknown" />
+                <p>Login</p>
+            </div>
         ) }
         
-        <img className='expand' onClick={() => navigate("/test-yourself")} style={{ width: "100%", cursor: "pointer" }} src={testYourself} alt="Test yourself" />
+        
         <img src={logo} alt="IHEARYOU" />
-
+       
         {/* <button onClick={() => setLoggedIn(true)}>login</button>
         <button onClick={() => setLoggedIn(false)}>logout</button> */}
         </>

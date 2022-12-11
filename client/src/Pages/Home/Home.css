@@ -12,15 +12,31 @@
 .landing h1 {
     text-transform: uppercase;
     font-family: 'Yeseva One', serif;
-    text-align: center;
-    font-size: 4rem;
-    letter-spacing: 0.5rem;
+    text-align: left;
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
     margin-right: 15vw;
+}
+
+.sectionLandingText{
+    margin: 0;
+}
+.extended{
+display: flex;
+margin-left: 2rem;
+flex-direction: column;
+}
+.extended img{
+    margin-top: 10vh;
 }
 
 .landing section {
     width: 100%;
     display: flex;
+
+}
+.landing section .sectionWithTest{
+    display: block;
 }
 
 .landing section * {
@@ -36,7 +52,9 @@
     text-align: justify;
     max-width: 50ch;
     padding: 1vh 2vw;
-    width: 90%;
+    width: 100%;
+    text-transform: uppercase;
     letter-spacing: 0.3rem;
     font-weight: bold;
+    line-height: 3rem;
 }

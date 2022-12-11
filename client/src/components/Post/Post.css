@@ -1,8 +1,7 @@
 .containerPost{
     background-color: #D9D9D9;
     padding: 2rem;
-    max-width:fit-content;
-
+    max-width:100%;
     align-self: left;
 }
 .headPost{
@@ -11,9 +10,20 @@
     letter-spacing: 40%;
     font-weight: 500;
     text-transform: uppercase;
+    padding: 0;
 }
-.headPost img{
-    width: 3rem;
+.headPost .imagePost img{
+    width: 2rem;
+    justify-self: right;
+}
+.headPost .imagePost{
+    margin: 0;
+    justify-self: left;
+    padding: 0;
+}
+.headPost .titlePost{
+    align-self: left;
+    letter-spacing: 0.6rem;
 }
 .headPost, .bodyPostText, p{
     padding: 2rem;
