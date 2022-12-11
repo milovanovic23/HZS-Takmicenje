@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
                 </section>
                 <Foooter/>
             </main>
-            { location.pathname === '/login' ? <></> : <section className='sidebar'><Sidebar /></section>}
+            { location.pathname === '/login' || location.pathname==='/register'? <></> : <section className='sidebar'><Sidebar /></section>}
             
         </>
     );
