@@ -20,9 +20,11 @@
 
 .sidebar .expand {
     transition: 200ms ease;
+    font-size: 1.2rem;
 }
+
 .sidebar .expand:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 200ms ease;
 }
 
@@ -43,8 +45,8 @@
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: underline;
-    letter-spacing: 1px;
-    font-size: 1rem;
+    letter-spacing: 4px;
+    font-size: 1.2rem;
 }
 
 .sidebar .profile * {
