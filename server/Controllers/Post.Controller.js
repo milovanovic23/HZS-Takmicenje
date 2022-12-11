@@ -12,10 +12,15 @@ export default class PostController{
     }
 
     addPost = async function (request,response) {
-        const {title, content, tags, allowsReplies, user} = request.body;
+        const { title, content, tags, allowsReplies } = request.body;
 
-        const mongoUser = await User.findById(user.id);
+        // console.log(request.headers.authorization)
 
+        const user = decodeJWT(request.headers.authorization);
+        console.log(user)
+        const mongoUser = await User.findById(user);
+        console.log(mongoUser)
+        
         if(!mongoUser){
             return response.status(404).json({message: 'User not found'});
         }

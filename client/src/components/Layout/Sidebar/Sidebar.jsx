@@ -35,7 +35,7 @@ const Sidebar = () => {
     return (
         <>
         { loggedIn ? (
-            <div onClick={() => navigate("/my-profile")} className="profile expand">
+            <div onClick={() => window.location.reload()} className="profile expand">
                 <img src={avatar} alt="Avatar" />
                 <p>{username}</p>
             </div>

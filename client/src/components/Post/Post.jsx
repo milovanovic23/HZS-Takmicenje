@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Post.css'
 // import profilePhoto from '../../assets/profilePhoto.png'
@@ -12,9 +12,7 @@ const Post = (props) => {
     AOS.init();
   }, [])
 
-  
-  
-  
+  const [isShowMore, setIsShowMore] = useState(false);
   return (
     <div className='containerPost' data-aos="fade-right" data-aos-duration="1000">
         <div className="headPost">
@@ -28,9 +26,9 @@ const Post = (props) => {
         </div>
         <div className="bodyPost">
             <div className="bodyPostText">
-                {props.bodyText.substring(0, 500) + '...'}
+                {isShowMore ? props.bodyText : props.bodyText.substring(0,300)+'...'}
             </div>
-            <p className='findOut' onClick={()=>{}}>find out more...</p>
+            <p className='findOut' onClick={()=>{ setIsShowMore(!isShowMore) }}>{isShowMore ? "collapse" : "find out more..." }</p>
         </div>
 
         

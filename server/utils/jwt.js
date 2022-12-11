@@ -4,7 +4,7 @@ dotenv.config();
 import jwt from "jsonwebtoken";
 
 export const authoriseUser = function(req, res, next){
-    const token = req.headers['Authorization'];
+    const token = req.headers.authorization;
 
     if(!token){
         return res.status(401).json({message: 'Invalid token'});
