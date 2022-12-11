@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import { useLocation } from 'react-router-dom';
 import unknown from '../../../assets/unknownProfile.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 import logo from "../../../assets/logo-updated.png";
@@ -15,7 +18,9 @@ const Sidebar = () => {
     const { loggedIn, setLoggedIn } = useContext(LIContext);
     const { token, setToken } = useContext(AContext);
     const navigate = useNavigate();
-
+    useEffect(() => {
+        AOS.init();
+      }, [])
     const [ username, setUsername ] = useState("");
     const [ avatar, setAvatar ] = useState("");
 
@@ -39,7 +44,9 @@ const Sidebar = () => {
         ) }
         
         
-        <img src={logo} alt="IHEARYOU" />
+        <img data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1000" src={logo} alt="IHEARYOU" />
        
         {/* <button onClick={() => setLoggedIn(true)}>login</button>
         <button onClick={() => setLoggedIn(false)}>logout</button> */}
