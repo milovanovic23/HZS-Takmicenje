@@ -30,7 +30,7 @@ const Post = (props) => {
             <div className="bodyPostText">
                 {props.bodyText.substring(0, 500) + '...'}
             </div>
-            <p className='findOut' onClick={()=>{navigate('/story')}}>find out more...</p>
+            <p className='findOut' onClick={()=>{}}>find out more...</p>
         </div>
 
         

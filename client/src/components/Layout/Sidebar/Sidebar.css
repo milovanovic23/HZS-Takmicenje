@@ -48,7 +48,11 @@
     letter-spacing: 4px;
     font-size: 1.2rem;
 }
-
+@media screen and (max-width:1130px){
+    .sidebar{
+        display: none;
+    }
+}
 .sidebar .profile * {
     margin: 0;
 }

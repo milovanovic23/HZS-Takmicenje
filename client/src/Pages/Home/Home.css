@@ -58,3 +58,38 @@ flex-direction: column;
     font-weight: bold;
     line-height: 3rem;
 }
+@media screen and (max-width:870px){
+    .containerStories{
+        padding: 20px!important;
+        margin: 0;
+    }
+}
+@media screen and (max-width:960px){
+    .landing{
+        width: 100%;
+    }
+    .landing h1 {
+       font-size: 3rem;
+    }
+    
+    section{
+        flex-direction: column;
+        width: 100%;
+    }
+    .landing section p {
+       font-size: 1rem;
+    }
+    .sectionWithTest img{
+        width: 100%;
+    }
+    .testYourSelfLanding{
+        width: 2rem;
+        height: auto;
+    }
+
+}
+@media screen and (max-width:600px){
+    .landing h1 {
+        margin-right: 7vw;
+    }
+}

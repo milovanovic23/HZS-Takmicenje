@@ -1,8 +1,9 @@
 import React from 'react';
+import './Text.css'
 
 const Text = ({ value }) => {
   return (
-    <div>{ value }</div>
+    <div className='textInStory'>{ value }</div>
   );
 }
 

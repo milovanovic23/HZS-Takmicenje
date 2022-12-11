@@ -118,7 +118,10 @@ const Game = (props) => {
   }
   
   return (
-    <div className="game-wrapper">
+    
+    
+      <div className="game-wrapper">
+      
       <div className="game">
         { started ? <img src={!branches[paths].end && branches[paths].texts.length === i ? idle : walking} alt="character" /> : <img src={frozen} alt="character" /> }
         
@@ -154,6 +157,8 @@ const Game = (props) => {
         }
     </div>
   </div>
+    
+    
   );
 }
 
