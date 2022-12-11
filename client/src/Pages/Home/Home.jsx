@@ -31,10 +31,10 @@ const Home = () => {
                 <div data-aos="fade-right" data-aos-duration="1000" className='sectionLandingText'>
                     <p>The internet is involved in everyone’s life today, but as much good as it brings, it brings the same amount of bad things that could happen to you if you stumble upon the bad part of the internet. Our story-based, point-and-click games try to help everyone understand the importance of trying to find help for yourself or someone that needs it.</p>
                 </div>
-                <img src={img1} alt="IMG1" />
+                <img data-aos="fade-right" data-aos-duration="1000"src={img1} alt="IMG1" />
             </section>
             <section className='sectionWithTest'>
-                <img src={img2} alt="IMG2" />
+                <img data-aos="fade-left" data-aos-duration="1000"src={img2} alt="IMG2" />
                 <div data-aos="fade-left" data-aos-duration="1000" className='sectionLandingText extended'>
                     <p>Also, a big part of our goal is to bring awareness to what could happen in the worst possible scenario, and help people find good in themselves and others.</p>
                     { location.pathname === '/test-yourself'? <></> : <img className="testYourSelfLanding" onClick={() => navigate("/test-yourself")} style={{ cursor: "pointer" }} src={testYourself} alt="Test yourself" />}

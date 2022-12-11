@@ -31,11 +31,6 @@ const Stories = () => {
             )
           )
         }
-        {/* <Post title='Lorem ipsum'  bodyText='Lorem sadsa dasds dasd as  dasd dasd  asds sad sd sd  dsad  dsa ds d sd sdsad  das dsasdds sdas dasd sdas sd ipsum dolor dsad adsdasd dasdasd sdasdas dasdasd asdsd  asda s asdasdasd dasd dasd asd dasdasdas asdasdas dasdasd dasdasd dasdas dsadasd asdasda dasdas'/>
-        <Post title='Lorem ipsum' bodyText='Lorem sadsa dasds dasd as  dasd dasd  asds sad sd sd  dsad  dsa ds d sd sdsad  das dsasdds sdas dasd sdas sd ipsum dolor dsad adsdasd dasdasd sdasdas dasdasd asdsd  asda s asdasdasd dasd dasd asd dasdasdas asdasdas dasdasd dasdasd dasdas dsadasd asdasda dasdas'/>
-        <Post title='Lorem ipsum' bodyText='Lorem sadsa dasds dasd as  dasd dasd  asds sad sd sd  dsad  dsa ds d sd sdsad  das dsasdds sdas dasd sdas sd ipsum dolor dsad adsdasd dasdasd sdasdas dasdasd asdsd  asda s asdasdasd dasd dasd asd dasdasdas asdasdas dasdasd dasdasd dasdas dsadasd asdasda dasdas'/>
-        <Post title='Lorem ipsum' bodyText='Lorem sadsa dasds dasd as  dasd dasd  asds sad sd sd  dsad  dsa ds d sd sdsad  das dsasdds sdas dasd sdas sd ipsum dolor dsad adsdasd dasdasd sdasdas dasdasd asdsd  asda s asdasdasd dasd dasd asd dasdasdas asdasdas dasdasd dasdasd dasdas dsadasd asdasda dasdas'/>
-        <Post title='Lorem ipsum' bodyText='Lorem sadsa dasds dasd as  dasd dasd  asds sad sd sd  dsad  dsa ds d sd sdsad  das dsasdds sdas dasd sdas sd ipsum dolor dsad adsdasd dasdasd sdasdas dasdasd asdsd  asda s asdasdasd dasd dasd asd dasdasdas asdasdas dasdasd dasdasd dasdas dsadasd asdasda dasdas'/> */}
       </div>
     </div>
   );
