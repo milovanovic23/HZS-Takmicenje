@@ -5,11 +5,15 @@ import './Game.css';
 import idle from "../../assets/Azaric-Idle.gif";
 import walking from "../../assets/Azaric-Walking.gif";
 import frozen from "../../assets/Azaric.png";
+import backgroundMusic from "../../assets/musica de la herry freud.mp3";
 
 const Game = (props) => {
+  let audio = new Audio(backgroundMusic);
   const [ currChoice, setCurrChoice ] = useState(0);
   const [ text, setText ] = useState("");
-
+  const start = () => {
+    audio.play();
+  }
   const [ state, setState ] = useState(frozen);
   const [ started, setStarted ] = useState(false);
   const [ allowNext, setAllowNext ] = useState(false);
@@ -121,12 +125,13 @@ const Game = (props) => {
       <div className="game">
         <img src={state} alt="character" />
         <p>{ text }</p>
-        { !started ? <button onClick={() => {setStarted(true); setState(walking); setAllowNext(true);}} >Start game</button> : <></> }
+        { !started ? <button onClick={() => {setStarted(true); setState(walking); setAllowNext(true); start();}} >Start game</button> : <></> }
         { started && messages[currChoice - 1 < 0 ? 0 : currChoice - 1].type === "choice" ? <div className="game-choices"> <button onClick={()=>{ setCurrChoice(messages[currChoice - 1 < 0 ? 0 : currChoice - 1].optionA); advance() }} >{ messages[currChoice - 1 < 0 ? 0 : currChoice - 1].optionAText }</button> <button onClick={()=>{ setCurrChoice(messages[currChoice - 1 < 0 ? 0 : currChoice - 1].optionB); advance() }}>{ messages[currChoice - 1 < 0 ? 0 : currChoice - 1].optionBText }</button> </div> : <></>}
 
         { allowNext ? <button onClick={advance}>Next</button> : <></> }
       </div>
     </div>
+    
   );
 }
 
