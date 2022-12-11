@@ -3,9 +3,11 @@
     padding: 2rem;
     max-width:100%;
     align-self: left;
+    margin: 1rem;
 }
 .headPost{
     display: flex;
+    justify-content: space-between;
     font-size:20px;
     letter-spacing: 40%;
     font-weight: 500;
@@ -13,7 +15,7 @@
     padding: 0;
 }
 .headPost .imagePost img{
-    width: 2rem;
+    width: 3rem;
     justify-self: right;
 }
 .headPost .imagePost{
@@ -21,11 +23,25 @@
     justify-self: left;
     padding: 0;
 }
-.headPost .titlePost{
+.titlePost{
     align-self: left;
-    letter-spacing: 0.6rem;
+    letter-spacing: 1rem;
 }
-.headPost, .bodyPostText, p{
+.bodyPostText{
+    letter-spacing: 0.4rem;
+}
+.findOut{
     padding: 2rem;
-    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    border: none;
+    font-weight: bold;
+    padding-bottom: 0.8rem;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+.findOut:hover{
+    text-decoration: underline;
 }

@@ -2,13 +2,20 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import burger from '../../../assets/burger.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Navbar = () => {
     const location = useLocation();
     const { pathname } = location;
-
+    useEffect(() => {
+        AOS.init();
+      }, [])
     return (
-        <nav>
+        <nav data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="500">
             <img src={burger}/>
             <ul>
                 <li>
@@ -36,8 +43,8 @@ const Navbar = () => {
                     &nbsp;/
                 </li>
                 <li>
-                    <Link className='link' to="/contact-us">
-                    { pathname === "/contact-us" ? <div className="active">Contact us</div> : "Contact us"}
+                    <Link className='link' to="/create-post">
+                    { pathname === "/create-post" ? <div className="active"></div> : "be heard"}
                     </Link>
                 </li>
             </ul>

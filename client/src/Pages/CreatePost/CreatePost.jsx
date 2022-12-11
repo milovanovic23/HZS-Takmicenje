@@ -1,8 +1,8 @@
 import React from 'react';
-
+import './CreatePost.css'
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <div>CreatePost</div>
   );
 }
 
