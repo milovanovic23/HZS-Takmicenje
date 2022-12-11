@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useContext} from 'react';
 import './Home.css';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -7,13 +7,17 @@ import 'aos/dist/aos.css';
 import img1 from '../../assets/landing1.png';
 import img2 from '../../assets/landing2.png';
 import testYourself from '../../assets/testyourself1.png';
+import { AContext } from '../../context/AuthContext';
 
 const Home = () => {
     const location=useLocation();
     const navigate=useNavigate();
+    const { token, setToken } = useContext(AContext);
+    
     useEffect(() => {
         AOS.init();
-      }, [])
+    });
+
     return (
         <div className="landing">
             
@@ -22,8 +26,6 @@ const Home = () => {
                 is to <br />
                 communicate
             </h1>
-
-        
            
             <section>
                 <div data-aos="fade-right" data-aos-duration="1000" className='sectionLandingText'>
@@ -34,7 +36,7 @@ const Home = () => {
             <section className='sectionWithTest'>
                 <img src={img2} alt="IMG2" />
                 <div data-aos="fade-left" data-aos-duration="1000" className='sectionLandingText extended'>
-                    <p>Also, a big part of our goal is to bring awareness to what could happen in the worst possible scenario, and help people find good in themselves and the others.</p>
+                    <p>Also, a big part of our goal is to bring awareness to what could happen in the worst possible scenario, and help people find good in themselves and others.</p>
                     { location.pathname === '/test-yourself'? <></> : <img className="testYourSelfLanding" onClick={() => navigate("/test-yourself")} style={{ cursor: "pointer" }} src={testYourself} alt="Test yourself" />}
                 </div>
                 

@@ -8,6 +8,7 @@ import Story from "./Pages/Story/Story.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import Register from "./Pages/Register/Register.jsx";
 import Stories from "./Pages/Stories/Stories.jsx";
+import ProtectedRoute from "./context/ProtectedRoute.jsx";
 
 function App() {
   return (
@@ -17,7 +18,11 @@ function App() {
         <Route path="/stories" element={<Stories />} />
         <Route path="/story" element={<Story />} />
         <Route path="/test-yourself" element={<Game />} />
-        <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/create-post" element={
+          <ProtectedRoute>
+            <CreatePost />
+          </ProtectedRoute>
+        } />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       

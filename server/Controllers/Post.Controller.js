@@ -48,8 +48,8 @@ export default class PostController{
                 return response.status(404).json({message: 'Post not found'});
             }
 
-            if(post.user.id!==uId){
-                return response.status(403).json({messsage:'Cannot delete this post'});
+            if(post.user.id !== uId){
+                return response.status(403).json({message:'Cannot delete this post'});
             }
 
             await post.user.posts.remove(post.id);
