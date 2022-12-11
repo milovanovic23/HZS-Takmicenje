@@ -5,3 +5,9 @@
     letter-spacing: 0.6rem;
     margin: 2rem;
 }
+.containerStories{
+    margin: 5rem;
+    display: flex;
+    padding: 5rem;
+    flex-direction: column;
+}
